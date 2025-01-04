@@ -14,7 +14,7 @@
         <h1 class="logo">YBrutal</h1>
         <nav>
             <ul class="nav-links">
-                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#solutions">Our Solutions</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -26,6 +26,7 @@
 
 <!-- Hero Section -->
 <section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
         <h2>Smart Parking Solutions for Cities &amp; Businesses</h2>
         <p>Optimize your parking space with our cutting-edge technology.</p>
@@ -33,14 +34,14 @@
 </section>
 
 <!-- Solutions Section -->
-<div class="solutions-section">
+<div id="solutions" class="solutions-section">
     <h2 class="solutions-heading">Our Solutions</h2>
     <div class="solution-item">
-        <div class="solution-image">
+        <div class="solution-image-wrapper">
             <img src="file.jpg" alt="Parking Guidance Image">
         </div>
         <div class="solution-text">
-            <h2 id="dusra-wala">Parking Guidance</h2>
+            <h2>Parking Guidance</h2>
             <p>Entering a parking lot and spending unnecessary time in searching for a spot? 
                 We got you covered! Using our app lets you know which and where the parking 
                 spots are available.</p>
@@ -48,31 +49,33 @@
     </div>
     <div class="solution-item">
         <div class="solution-text">
-            <h2 >Vehicle Spot Recognition</h2>
+            <h2>Vehicle Spot Recognition</h2>
             <p>The platform offers real-time updates regarding the availability of spots. It 
                 shows the spots instantly so you can park your car without wasting time.</p>
         </div>
-        <div class="solution-image">
+        <div class="solution-image-wrapper">
             <img src="2nd feaure.png" alt="Vehicle Spot Recognition Image">
         </div>
     </div>
 </div>
 
+
 <!-- How It Works Section -->
-<section class="section how-it-works">
+<section id="how-it-works" class="section how-it-works">
     <div class="container">
         <h3>How It Works</h3>
-        <div class="video-tutorial">
-            <iframe class="gud" src="https://www.youtube.com/embed/VIDEO_ID" 
-                      frameborder="0" 
-                       allowfullscreen>
-            </iframe>
-        
-        
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe src="https://www.youtube.com/embed/VIDEO_ID" 
+                        frameborder="0" 
+                        allowfullscreen>
+                </iframe>
+            </div>
         </div>
-
     </div>
 </section>
+
+[Rest of your HTML remains the same...]
 
 <!-- About Section -->
 <section id="about" class="section about">
@@ -115,6 +118,23 @@
         <p>&copy; 2024 Ybrutal                                                                                                                                                                                                                                       . All rights reserved.</p>
     </div>
 </footer>
+
+<script>
+    let lastScroll = 0;
+    const navbar = document.querySelector('.navbar');
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            navbar.classList.add('hidden');
+        } else {
+            navbar.classList.remove('hidden');
+        }
+        
+        lastScroll = currentScroll;
+    });
+    </script>
 
 </body>
 </html>
