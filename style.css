@@ -253,7 +253,8 @@ font-family: none;
     font-size: 2rem;
     color: var(--white);
     margin-bottom: 1.5rem;
-    font-family: Roboto;
+    font-family: none;
+    font-weight: 100;
 
 }
 
