@@ -11,16 +11,23 @@
 <!-- Header Section -->
 <header class="navbar">
     <div class="container">
-        <h1 class="logo">YBrutal</h1>
+       
+        
         <nav>
-            <ul class="nav-links">
-                <li><a href="#solutions">Our Solutions</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <a href="#contact" class="cta-button">Get Started</a>
+            <div class="logo">YBrutal</div>
+            <div class="hamburger-container">
+                <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+                <ul class="hidden">
+                  <li><a href="#Our Solutions">Our Solutions</a></li>
+                  <li><a href="#How It Works">How It Works</a></li>
+                  <li><a href="#About"> About</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </div>
+              
+            
+          </nav>
+        
     </div>
 </header>
 
@@ -28,8 +35,9 @@
 <section class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h2>Smart Parking Solutions for Cities &amp; Businesses</h2>
+        <h2>Smart Parking Solutions for Cities & Businesses</h2>
         <p>Optimize your parking space with our cutting-edge technology.</p>
+        <a href="#contact" class="hero-cta">Get Started</a>
     </div>
 </section>
 
@@ -75,11 +83,13 @@
     </div>
 </section>
 
+
+
 <!-- About Section -->
 <section id="about" class="section about">
     <div class="container">
         <h3>About Us</h3>
-        <h2 style="color: white">Smart Solutions for Smarter Parking</h2>
+        <h2 style="color:white">Smart Solutions for Smarter Parking</h2>
         <p>At Ybrutal, we specialize in innovative, high-tech solutions for outdoor and on-street 
             parking detection, monitoring, and guidance. Based in Hyderabad, India, Ybrutal empowers 
             organizations with reliable and efficient systems that enhance user convenience, foster 
@@ -132,6 +142,14 @@
         
         lastScroll = currentScroll;
     });
+   
+    function toggleMenu() {
+  const menu = document.querySelector("ul");
+  menu.classList.toggle("show");
+}
+
+
+ 
     </script>
 
 </body>
