@@ -1,4 +1,4 @@
-/* Base Reset */
+
 /* Base Reset */
 * {
     margin: 0;
@@ -29,12 +29,6 @@ body {
     overflow-x: hidden;
 }
 
-.container {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0 1rem;
-}
 
 /* Typography */
 h1, h2, h3 {
@@ -42,71 +36,150 @@ h1, h2, h3 {
     margin-bottom: 1rem;
 }
 
-/* Navbar */
-/* Navbar - MODIFY existing navbar class */
-.navbar {
-    background-color: var(--secondary-color);
-    padding: 1rem 0;
-    position: fixed;  /* Change from sticky to fixed */
-    top: 0;
-    z-index: 1000;
+
+/* Hero Section */
+.hero {
+    background-image: url('image.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    position: relative;
+    margin-top: 80px; /* Space for fixed navbar */
     width: 100%;
-    transition: transform 0.3s ease-in-out;  /* Add this */
 }
 
-/* ADD this new class right after the navbar class */
-.navbar.hidden {
-    transform: translateY(-100%);
+.hero {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 0rem;
+    max-width: 800px;
+    width: 90%;
+}
+
+.hero h2 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 23rem;
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
     color: var(--text-color);
     font-size: 1.5rem;
     font-weight: bold;
-    text-decoration: none;
-    white-space: nowrap;
+}
+
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
-}
-
-.navbar nav {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li {
-    display: inline-block;
-}
-
-.nav-links a {
-    color: var(--text-color);
+    box-sizing: border-box;
+  }
+  
+  /* Hamburger Menu Container */
+  .hamburger-container {
+    position: relative;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger-menu {
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+    position: fixed; /* Fixed in top-right corner */
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  
+  /* Navigation Menu (Hidden by Default) */
+  ul {
+    list-style: none;
+    position: fixed;
+    top: 60px; /* Adjust to match the hamburger position */
+    right: 20px;
+    background-color: #333; /* Dark background */
+    color: #fff;
+    width: 200px; /* Width of the menu */
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: scaleY(0); /* Initially hidden */
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Show Menu (When toggled) */
+  ul.show {
+    transform: scaleY(1); /* Expand vertically */
+  }
+  
+  /* Navigation Menu Items */
+  ul li {
+    padding: 10px 20px;
+    text-align: left;
+  }
+  
+  ul li:hover {
+    background-color: #555; /* Hover effect */
+  }
+  
+  ul li a {
     text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-    white-space: nowrap;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
+    color: #fff;
+    font-size: 16px;
+    display: block;
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    ul {
+      width: 100%; /* Full width on mobile */
+      right: 0;
+    }
+  
+    .hamburger-menu {
+      right: 10px; /* Slightly adjust position on mobile */
+    }
+  }
+  
 /* Buttons */
 .cta-button {
     background-color: var(--dark);
@@ -120,7 +193,7 @@ h1, h2, h3 {
 }
 
 .cta-button:hover {
-    background-color: var(--primary-color);
+    background-color: var(--primary-co);
 }
 
 /* Hero Section */
@@ -128,53 +201,77 @@ h1, h2, h3 {
     background-image: url('image.png');
     background-size: cover;
     background-position: center;
-    color: var(--white);
-    padding: 6rem 0;
-    text-align: center;
+    min-height: 500px; /* Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    width: 100%;
+    margin-top: 80px;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
-}
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    padding: 0 1rem;
-}
 
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.hero-content p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-}
-
-.hero-content h2{
-    margin-top: 2%;
-    font-family: none;
-}
-
-/* Hero Section - KEEP your existing hero class, but ADD this new class after it */
 .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    bottom: 10;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+}
+
+.hero-content {
+    position: relative;
     z-index: 1;
+    text-align: center;
+    color: var(--white);
+    padding: 0 2rem;
+    max-width: 800px;
+}
+
+.hero h2 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 2rem;
+}
+
+/* New Hero CTA Button */
+.hero-cta {
+    background-color: #FDD017; /* Initial background color */
+    color: var(--text-color); /* Retain the original text color variable */
+    padding: 0.8rem 2rem; /* Original padding */
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+    display: inline-block;
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.hero-cta:hover {
+    background-color: #0f6685; /* Change background color on hover */
+    color: #ffffff; /* Change text color on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Retain the shadow effect */
+}
+
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .hero {
+        margin-top: 60px;
+    }
+
+    .hero-content {
+        padding: 0 1rem;
+    }
 }
 
 /* Solutions Section */
@@ -206,24 +303,25 @@ h1, h2, h3 {
     flex: 1;
 }
 
+/* Solutions Section */
 .solution-text h2 {
     color: var(--white);
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    margin-left: 100px;
-    font-family: none;
+    text-align: center; /* Center align all headings */
+    margin-left: 0; /* Remove the previous margin */
 }
 
 .solution-text p {
     color: var(--white);
     font-size: 1.1rem;
     line-height: 1.6;
+    text-align: center; /* Center align all paragraphs */
+    padding: 0 1rem; /* Add some padding */
 }
 
-#dusra-wala{
-margin-left: 30%;
-font-family: none;
-}
+
+
 
 /* Solutions Section - REPLACE your solution-image class with these */
 .solution-image-wrapper {
@@ -409,5 +507,4 @@ form button {
     height: 100%;
 }
 
-/* You can remove your .gud class as it's no longer needed */
 /* You can remove your .gud class as it's no longer needed */
