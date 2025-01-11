@@ -13,7 +13,7 @@ html {
 }
 /* Variables */
 :root {
-    --primary-color: #0f6685;
+    --primary-color: #155E95;
     --secondary-color: #FDD017;
     --text-color: #000000;
     --white: #ffffff;
@@ -252,7 +252,7 @@ h1, h2, h3 {
 }
 
 .hero-cta:hover {
-    background-color: #0f6685; /* Change background color on hover */
+    background-color: #155E95; /* Change background color on hover */
     color: #ffffff; /* Change text color on hover */
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Retain the shadow effect */
