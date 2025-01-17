@@ -14,7 +14,7 @@ html {
 /* Variables */
 :root {
     --primary-color: #155E95;
-    --secondary-color: #FDD017;
+    --secondary-color: #F9BF3B;
     --text-color: #000000;
     --white: #ffffff;
     --dark: #24282c;
@@ -73,12 +73,18 @@ h1, h2, h3 {
 .hero h2 {
     font-size: clamp(2rem, 5vw, 2.5rem);
     margin-bottom: 1rem;
-    font-weight: bold;
+    font-weight: bolder;
+    font-family: 'Merriweather', serif;
+    color: white;
+
 }
 
 .hero-content p {
     font-size: clamp(1rem, 3vw, 1.2rem);
-    margin-bottom: 23rem;
+    margin-bottom: 2rem;
+    margin-top: -1.5rem;
+    font-weight: bold;
+    font-family: monospace;
 }
 
 
@@ -241,7 +247,7 @@ h1, h2, h3 {
 
 /* New Hero CTA Button */
 .hero-cta {
-    background-color: #FDD017; /* Initial background color */
+    background-color: #F9BF3B; /* Initial background color */
     color: var(--text-color); /* Retain the original text color variable */
     padding: 0.8rem 2rem; /* Original padding */
     border-radius: 5px;
